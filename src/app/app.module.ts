@@ -1,12 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { AppRoutingModule } from './app-routing.module';
+
+import { AuthGuard } from './auth.guard'
+
 import { AppComponent } from './app.component';
 import { ProductosComponent } from './productos/productos.component';
 import { PromocionesComponent } from './promociones/promociones.component';
 import { NovedadesComponent } from './novedades/novedades.component';
 import { LoginComponent } from './login/login.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
+import { PanelComponent } from './panel/panel.component';
 
 @NgModule({
   declarations: [
@@ -15,12 +20,14 @@ import { CreateAccountComponent } from './create-account/create-account.componen
     PromocionesComponent,
     NovedadesComponent,
     LoginComponent,
-    CreateAccountComponent
+    CreateAccountComponent,
+    PanelComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
