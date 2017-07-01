@@ -18,6 +18,7 @@ import { PanelComponent } from './panel/panel.component';
 
 /* SERVICES */
 import { ProductosService } from './productos/productos.service';
+import { CreateAccountService } from './create-account/create-account.service'
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { ProductosService } from './productos/productos.service';
   ],
   providers: [
     AuthGuard, 
-    ProductosService
+    ProductosService,
+    CreateAccountService
   ],
   bootstrap: [AppComponent]
 })
