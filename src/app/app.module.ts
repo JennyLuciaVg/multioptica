@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { HttpModule }       from '@angular/http';
+import { RouterModule }     from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AuthGuard } from './auth.guard'
@@ -38,7 +39,6 @@ import { CreateAccountService } from './create-account/create-account.service'
     ProductosService,
     CreateAccountService
   ],
-  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
