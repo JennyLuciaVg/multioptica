@@ -14,7 +14,9 @@ export class CreateAccountComponent implements OnInit {
 
   ngOnInit() {}
 
-  registerAccount(first_name, last_name, phone, email, password) {
+  registerAccount($event, first_name, last_name, phone, email, password) {
+    $event.preventDefault();
+
   	this.createAccount.createAccount(first_name, last_name, phone, email, password).subscribe( res => {
   		this.router.navigate(['dashboard']);
   	})

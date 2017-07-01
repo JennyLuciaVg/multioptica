@@ -1,6 +1,6 @@
 <div class="container-xs pv-70">
   <h3 class="text-center fw-medium-mon">CREAR UNA CUENTA</h3>
-  <form (submit)="registerAccount(firstName.value, lastName.value, phone.value, email.value, password.value)" class="pv-56">
+  <form (submit)="registerAccount($event, firstName.value, lastName.value, phone.value, email.value, password.value)" class="pv-56">
     <div class="form-group">
       <label class="fw-regular-mon" for="firstName">Nombres</label>
       <input #firstName type="text" class="form-control" id="firstName">
