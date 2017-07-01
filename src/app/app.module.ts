@@ -1,6 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { AppRoutingModule } from './app-routing.module';
+
+import { AuthGuard } from './auth.guard'
+
 import { AppComponent } from './app.component';
 import { ProductosComponent } from './productos/productos.component';
 import { PromocionesComponent } from './promociones/promociones.component';
@@ -20,9 +24,10 @@ import { PanelComponent } from './panel/panel.component';
     PanelComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
