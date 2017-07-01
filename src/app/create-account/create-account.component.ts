@@ -10,6 +10,8 @@ import { CreateAccountService } from './create-account.service';
 })
 export class CreateAccountComponent implements OnInit {
 
+  private externalUrl: string = 'https://powerful-dawn-52250.herokuapp.com/admin/login/?next=/admin/';
+
   constructor(private router: Router, private createAccount: CreateAccountService) { }
 
   ngOnInit() {}
@@ -18,7 +20,8 @@ export class CreateAccountComponent implements OnInit {
     $event.preventDefault();
 
   	this.createAccount.createAccount(first_name, last_name, phone, email, password).subscribe( res => {
-  		this.router.navigate(['dashboard']);
+  		//this.router.navigate(['dashboard']);
+      window.location.href = this.externalUrl;
   	})
   }
 
