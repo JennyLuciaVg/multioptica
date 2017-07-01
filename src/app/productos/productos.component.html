@@ -26,70 +26,25 @@
     </div>
   </div>
 </div>
+
 <!--  END: SECCION: FILTRO  -->
 <!--  SECCION: LISTA DE PRODUCTOS -->
 <div class="container pt-70">
   <div id="lista-productos" class="row">
-    <div class="col-md-6 col-xs-12 pv-21">
+    <div *ngFor="let product of products" class="col-md-6 col-xs-12 pv-21">
       <div class="media content-product p-21 flex-row">
         <div class="media-body flex-align-center">
-          <h3 class="media-heading title-product text-primary-brown fw-medium-ral">Boss Orange - S/.540.00</h3>
-          <p class="description-product">Boss Orange BO 0198 / Estos auténtica Boss Orange tienen gafas de sol marcos marrón mate de poliamida D13
-          son la manera perfecta para proteger los ojos de los dañinos rayos UV durante su estancia un paso por delante
-          de la curva de la moda.</p>
+          <h3 class="media-heading title-product text-primary-brown fw-medium-ral">{{ product.name }} - S/.{{ product.price }}</h3>
+          <p class="description-product">{{ product.description }}</p>
         </div>
         <div class="media-right flex-align-center">
           <!-- <a href="#"> -->
-            <img class="media-object" style="width: 140px;" src="assets/images/producto-ejemplo.jpg" alt="...">
+            <img class="media-object" style="width: 140px;" src="{{ product.image }}" alt="...">
           <!-- </a> -->
         </div>
       </div>
     </div>
-    <div class="col-md-6 col-xs-12 pv-21">
-      <div class="media content-product p-21 flex-row">
-        <div class="media-body flex-align-center">
-          <h3 class="media-heading title-product text-primary-brown fw-medium-ral">Boss Orange - S/.540.00</h3>
-          <p class="description-product">Boss Orange BO 0198 / Estos auténtica Boss Orange tienen gafas de sol marcos marrón mate de poliamida D13
-          son la manera perfecta para proteger los ojos de los dañinos rayos UV durante su estancia un paso por delante
-          de la curva de la moda.</p>
-        </div>
-        <div class="media-right flex-align-center">
-          <!-- <a href="#"> -->
-            <img class="media-object" style="width: 140px;" src="assets/images/producto-ejemplo.jpg" alt="...">
-          <!-- </a> -->
-        </div>
-      </div>
-    </div>
-    <div class="col-md-6 col-xs-12 pv-21">
-      <div class="media content-product p-21 flex-row">
-        <div class="media-body flex-align-center">
-          <h3 class="media-heading title-product text-primary-brown fw-medium-ral">Boss Orange - S/.540.00</h3>
-          <p class="description-product">Boss Orange BO 0198 / Estos auténtica Boss Orange tienen gafas de sol marcos marrón mate de poliamida D13
-          son la manera perfecta para proteger los ojos de los dañinos rayos UV durante su estancia un paso por delante
-          de la curva de la moda.</p>
-        </div>
-        <div class="media-right flex-align-center">
-          <!-- <a href="#"> -->
-            <img class="media-object" style="width: 140px;" src="assets/images/producto-ejemplo.jpg" alt="...">
-          <!-- </a> -->
-        </div>
-      </div>
-    </div>
-    <div class="col-md-6 col-xs-12 pv-21">
-      <div class="media content-product p-21 flex-row">
-        <div class="media-body flex-align-center">
-          <h3 class="media-heading title-product text-primary-brown fw-medium-ral">Boss Orange - S/.540.00</h3>
-          <p class="description-product">Boss Orange BO 0198 / Estos auténtica Boss Orange tienen gafas de sol marcos marrón mate de poliamida D13
-          son la manera perfecta para proteger los ojos de los dañinos rayos UV durante su estancia un paso por delante
-          de la curva de la moda.</p>
-        </div>
-        <div class="media-right flex-align-center">
-          <!-- <a href="#"> -->
-            <img class="media-object" style="width: 140px;" src="assets/images/producto-ejemplo.jpg" alt="...">
-          <!-- </a> -->
-        </div>
-      </div>
-    </div>
+    
   </div>
 </div>
 <!--  END: SECCION: LISTA DE PRODUCTOS -->
