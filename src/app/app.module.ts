@@ -1,13 +1,10 @@
-import { BrowserModule }    from '@angular/platform-browser';
-import { NgModule }         from '@angular/core';
-import { HttpModule }       from '@angular/http';
-import { RouterModule }     from '@angular/router';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+
 import { AppRoutingModule } from './app-routing.module';
 
-/* AUTHENTIFICATION */
-import { AuthGuard } from './auth.guard';
+import { AuthGuard } from './auth.guard'
 
-/* COMPONENTS */
 import { AppComponent } from './app.component';
 import { ProductosComponent } from './productos/productos.component';
 import { PromocionesComponent } from './promociones/promociones.component';
@@ -41,6 +38,7 @@ import { CreateAccountService } from './create-account/create-account.service'
     ProductosService,
     CreateAccountService
   ],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
