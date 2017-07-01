@@ -13,6 +13,10 @@ import { LoginComponent } from './login/login.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
 import { PanelComponent } from './panel/panel.component';
 
+/* SERVICES */
+import { ProductosService } from './productos/productos.service';
+import { CreateAccountService } from './create-account/create-account.service'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +29,14 @@ import { PanelComponent } from './panel/panel.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpModule,
+    RouterModule
+  ],
+  providers: [
+    AuthGuard, 
+    ProductosService,
+    CreateAccountService
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]
