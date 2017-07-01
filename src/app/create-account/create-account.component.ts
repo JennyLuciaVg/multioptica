@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { CreateAccountService } from './create-account.service'
+import { CreateAccountService } from './create-account.service';
 
 @Component({
   selector: 'app-create-account',
@@ -14,8 +14,8 @@ export class CreateAccountComponent implements OnInit {
 
   ngOnInit() {}
 
-  registerAccount(email, password, first_name) {
-  	this.createAccount.createAccount(email, password, first_name).subscribe( res => {
+  registerAccount(first_name, last_name, phone, email, password) {
+  	this.createAccount.createAccount(first_name, last_name, phone, email, password).subscribe( res => {
   		this.router.navigate(['dashboard']);
   	})
   }

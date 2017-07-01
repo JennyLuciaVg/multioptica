@@ -10,10 +10,10 @@ export class CreateAccountService {
 
   constructor(private http: Http) { }
 
-  createAccount(email, password, first_name){
+  createAccount(first_name, last_name, phone, email, password){
 
   	let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });
-  	let body = JSON.stringify({email: email, password: password, first_name: first_name, is_joined: true});
+  	let body = JSON.stringify({email: email, password: password, first_name: first_name, last_name: last_name, phone: phone, is_joined: true});
 
   	return this.http.post(this.baseUrl, body)
   									.map((res: Response) => {
