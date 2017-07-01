@@ -27,17 +27,14 @@ const routes: Routes = [];
         component: LoginComponent,
       },
       {
-        path: 'sign_up',
-        component: CreateAccountComponent,
-      },
-      {
         path: 'dashboard',
         component: PanelComponent,
         children:[
           { path: '', component: ProductosComponent/*, canActivate: [AuthGuard]*/ },
           { path: 'productos', component: ProductosComponent/*, canActivate: [AuthGuard]*/ },
           { path: 'promociones', component: PromocionesComponent/*, canActivate: [AuthGuard]*/ },
-          { path: 'novedades', component: NovedadesComponent/*, canActivate: [AuthGuard]*/ }
+          { path: 'novedades', component: NovedadesComponent/*, canActivate: [AuthGuard]*/ },
+          { path: 'sign_up', component: CreateAccountComponent/*, canActivate: [AuthGuard]*/ },
         ]
       }
     ])
