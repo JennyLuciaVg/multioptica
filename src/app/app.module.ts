@@ -7,6 +7,7 @@ import { PromocionesComponent } from './promociones/promociones.component';
 import { NovedadesComponent } from './novedades/novedades.component';
 import { LoginComponent } from './login/login.component';
 import { CreateAccountComponent } from './create-account/create-account.component';
+import { PanelComponent } from './panel/panel.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { CreateAccountComponent } from './create-account/create-account.componen
     PromocionesComponent,
     NovedadesComponent,
     LoginComponent,
-    CreateAccountComponent
+    CreateAccountComponent,
+    PanelComponent
   ],
   imports: [
     BrowserModule
