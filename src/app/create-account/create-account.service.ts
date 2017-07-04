@@ -19,4 +19,11 @@ export class CreateAccountService {
   									.map((res: Response) => { return true; });
   }
 
+  requestCulqiResponse(token){
+
+  	let headers = new Headers({ 'Accept': 'application/json', 'Authorization': 'Bearer ' + token });
+
+  	return this.http.post('https://api.culqi.com/v2/charges', {}, headers).map((res: Response) => { return true; });
+  }
+
 }
