@@ -4,11 +4,76 @@
     <meta charset="utf-8">
     <title>Multioptica</title>
     <base href="/">
-    <link rel="stylesheet" href="../ebm.css">
+    <link rel="stylesheet" href="./src/ebm.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
   </head>
   <body>
     <app-root></app-root>
+    <script src="https://checkout.culqi.com/v2"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+    <!-- Configura el formulario-->
+    <script>
+     Culqi.publicKey = 'pk_test_jaYR4PZ3Ka9NQld8';
+     Culqi.settings({
+       title: 'Metodo de Pago',
+       currency: 'PEN',
+       description: '',
+       amount: ''
+     });
+    </script>
+
+    <!-- Muestra el Checkout de Culqi -->
+    <script>
+     $('#buyButton').on('click', function (e) {
+       // Abre el formulario con las opciones de Culqi.settings
+       Culqi.open();
+       e.preventDefault();
+
+       // Recibimos el token desde los servidores de Culqi
+
+       function culqi() {
+         if (Culqi.token) { // Token creado exitosamente!
+           // Obtener el token ID
+             var token = Culqi.token.id;
+             alert('Se ha creado un token: '+token);
+             //aqui es donde debes enviar el token a culqui supongo que es un ajax
+             // sino puede enviarlo asi nomas lo dejas como floro
+             //creo quees algo asiii
+             var token = Culqi.token.id;
+           var email = Culqi.email;
+           $.ajax({
+             type: "POST",
+             url: "https://api.culqi.com/v2/charges",
+             dataType: "json",
+             headers: {
+               "Accept": "application/json",
+               "authorization": "Bearer " + token
+             },
+             success: function (msg) {
+               if (msg) {
+                 alert("Afliacion Exitosa");
+               } else {
+                 alert("Error en post ajax!");
+               }
+             },
+
+             data: {
+               'amount': '', "capture": true, 'country_code': 'PE',
+               'description': 'Afiliacion de prueba', 'email': email,
+               'installments': 0, "source_id": token
+             }
+           });
+
+           } else { // Hubo algun problema!
+               // Mostramos JSON de objeto error en consola
+               console.log(Culqi.error);
+               alert(Culqi.error.mensaje);
+           }
+
+
+     }});
+    </script>
   </body>
 </html>
