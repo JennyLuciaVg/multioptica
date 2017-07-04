@@ -26,11 +26,16 @@ export class ProductosService {
         urlFilter += '?category=' + categories;
 
       if( min_price != undefined )
-        urlFilter += '&min_price=' + min_price;
+        if( urlFilter.indexOf('?') < 0 )
+          urlFilter += '?min_price=' + min_price;
+        else
+          urlFilter += '&min_price=' + min_price;
 
       if( max_price != undefined )
-        urlFilter += '&max_price=' + max_price;
-
+        if( urlFilter.indexOf('?') < 0 )
+          urlFilter += '?max_price=' + max_price;
+        else
+          urlFilter += '&max_price=' + max_price;
     }
 
     return this.http.get(urlFilter).map(res => res.json().results)
