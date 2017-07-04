@@ -2,15 +2,15 @@
   <h3 class="text-center fw-medium-mon">CREAR UNA CUENTA</h3>
   <form (submit)="registerAccount($event, firstName.value, lastName.value, phone.value, email.value, password.value)" class="pv-56">
     <div class="form-group">
-      <label class="fw-regular-mon" for="firstName">Nombres</label>
+      <label class="fw-regular-mon" for="firstName">Nombres:</label>
       <input #firstName type="text" class="form-control" id="firstName">
     </div>
     <div class="form-group">
-      <label class="fw-regular-mon" for="lastName">Apellidos</label>
+      <label class="fw-regular-mon" for="lastName">Apellidos:</label>
       <input #lastName type="text" class="form-control" id="lastName">
     </div>
    <div class="form-group">
-     <label class="fw-regular-mon" for="phone">Teléfono:</label>
+     <label class="fw-regular-mon" for="phone">Celular:</label>
      <input #phone type="text" class="form-control" id="phone">
    </div>
    <div class="form-group">
@@ -21,11 +21,9 @@
      <label class="fw-regular-mon" for="pwd">Contraseña:</label>
      <input #password type="password" class="form-control" id="pwd">
    </div>
-   
+
    <div class="form-group">
-     <label class="fw-regular-mon" for="pwd">Registrar método de pago:</label>
-     <button class="button button-primary" (click)="payWithCulqi()" type="button" id="buyButton">Pagar
-     </button>
+     <p class="text-center"><a (click)="payWithCulqi()" id="buyButton" class="fw-medium-mon text-primary-brown">Registrar método de pago</a></p>
    </div>
    <div class="text-center">
      <button type="submit" class="btn btn-bg-pink fw-medium-mon">CREAR CUENTA</button>

@@ -33,6 +33,7 @@
         <div class="media-body flex-align-center">
           <h3 class="media-heading title-product text-primary-brown fw-medium-ral">{{ product.name }} - S/.{{ product.price }}</h3>
           <p class="description-product">{{ product.description }}</p>
+          <a [href]="product.url" target="_blank"><p>{{ product.url }}</p></a>
         </div>
         <div class="media-right flex-align-center">
           <!-- <a href="#"> -->
@@ -41,7 +42,7 @@
         </div>
       </div>
     </div>
-    
+
   </div>
 </div>
 <!--  END: SECCION: LISTA DE PRODUCTOS -->
