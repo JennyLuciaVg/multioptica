@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpModule }       from '@angular/http';
 import { RouterModule }     from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
 
 import { AuthGuard } from './auth.guard'
 
@@ -17,6 +18,8 @@ import { PanelComponent } from './panel/panel.component';
 /* SERVICES */
 import { ProductosService } from './productos/productos.service';
 import { CreateAccountService } from './create-account/create-account.service'
+import { CategoriasService } from './productos/categorias/categorias.service'
+
 
 @NgModule({
   declarations: [
@@ -32,12 +35,14 @@ import { CreateAccountService } from './create-account/create-account.service'
     BrowserModule,
     AppRoutingModule,
     HttpModule,
-    RouterModule
+    RouterModule,
+    FormsModule
   ],
   providers: [
     AuthGuard, 
     ProductosService,
-    CreateAccountService
+    CreateAccountService,
+    CategoriasService
   ],
   bootstrap: [AppComponent]
 })

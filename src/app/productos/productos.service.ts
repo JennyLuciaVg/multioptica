@@ -15,7 +15,25 @@ export class ProductosService {
     return this.http.get(this.baseUrl).map(res => res.json().results)
   }
 
-  getProduct(){
+  filterProducts(categories, min_price, max_price){
+
+    let urlFilter = this.baseUrl;
+
+    // WARM: Remove this line when backend fix category with id 8.
+    if( categories != 8 ){
+
+      if( categories != undefined )
+        urlFilter += '?category=' + categories;
+
+      if( min_price != undefined )
+        urlFilter += '&min_price=' + min_price;
+
+      if( max_price != undefined )
+        urlFilter += '&max_price=' + max_price;
+
+    }
+
+    return this.http.get(urlFilter).map(res => res.json().results)
 
   }  
 

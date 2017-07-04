@@ -7,20 +7,17 @@
       </div>
       <div class="col-md-3 col-xs-12">
         <p class="text-white fw-medium-mon">PARA:</p>
-        <select class="ph-14" name="" id="">
-          <option value="">Damas</option>
-          <option value="">Caballeros</option>
-          <option value="">Niñas</option>
-          <option value="">Niños</option>
+        <select class="ph-14" [(ngModel)]="selectedCategory" (change)="onChange()" name="select_category" id="">
+          <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
         </select>
       </div>
       <div class="col-md-3 col-xs-12">
         <p class="text-white fw-medium-mon">DESDE S/. </p>
-        <input class="ph-14" type="text">
+        <input [(ngModel)]="minValue" (change)="onChange()" name="min" class="ph-14" type="text">
       </div>
       <div class="col-md-3 col-xs-12">
         <p class="text-white fw-medium-mon">HASTA S/. </p>
-        <input class="ph-14" type="text">
+        <input [(ngModel)]="maxValue" (change)="onChange()" name="max" class="ph-14" type="text">
       </div>
 
     </div>
